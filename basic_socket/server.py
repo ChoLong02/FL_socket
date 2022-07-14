@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from http import server
 import socket
+
 
 HOST = '127.0.0.1'  # 접속할 서버 주소
 PORT = 9999         # 클라이언트 접속 대기 포트번호
