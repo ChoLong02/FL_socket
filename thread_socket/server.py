@@ -29,7 +29,7 @@ def thread_socket(client_socket, addr):
         
     if client_socket in client_sockets:
         client_sockets.remove(client_socket)
-        print(f'Remove 참가 클라이언트 목록: {len(client_sockets)}')
+        print(f'Remove Client List: {len(client_sockets)}')
     client_socket.close()
     
 
@@ -54,7 +54,7 @@ try:
         client_socket, addr = server_socket.accept()
         client_sockets.append(client_socket)
         start_new_thread(thread_socket, (client_socket, addr))
-        print(f'참가 클라이언트 목록: ', len(client_sockets))
+        print(f'Client List: ', len(client_sockets))
 except Exception as e:
     print(f'Error: {e}')        
 finally:
