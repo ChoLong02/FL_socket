@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import socket
+from _thread import *
 
 HOST = '127.0.0.1'
 PORT = 9999
