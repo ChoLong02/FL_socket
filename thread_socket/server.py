@@ -48,8 +48,7 @@ print('::::::::::::::::::')
 
 try:
     while True:
-        print('::     WAIT     ::')
-        print('::::::::::::::::::')
+        print(':: WAIT')
         
         client_socket, addr = server_socket.accept()
         client_sockets.append(client_socket)
