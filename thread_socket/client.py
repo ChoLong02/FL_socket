@@ -7,14 +7,22 @@ PORT = 9999
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client_socket.connect((HOST, PORT))
 
+def recv_data(client_socket):
+    while True:
+        data = client_socket.recv(1024)
+        
+        print(f'Receive: {repr(data.decode())}')
+        
+        
+start_new_thread(recv_data, (client_socket,))
+
+
 while True:
     message = input('Enter Message: ')
     if message == 'quit':
         break
     
     client_socket.send(message.encode())
-    data = client_socket.recv(1024)
     
-    print(f'Received form the server: {repr(data.decode())}')
     
 client_socket.close()
